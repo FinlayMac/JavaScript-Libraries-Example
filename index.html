@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test</title>
+
+    <link rel="stylesheet" href="css/validationExample.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Form Validation Example</h1>
+    </header>
+
+    <section class="container">
+        <h2>Registration Form</h2>
+        <form action="php/send.php" method="POST">
+
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="John Johnston" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="John@gmail.com" required>
+
+            <label for="password">Password</label>
+            <p class="description">Please choose a password that includes at least 1 uppercase character, 1 lowercase
+                character, and 1 number and is at least 7 characters long.</p>
+            <input type="password" id="password" name="password" placeholder="***********" minlength="6"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="***********" minlength="6"
+                required>
+
+            <button type="submit">Register For Website</button>
+        </form>
+    </section>
+
+    <div class="break"></div>
+
+    <section class="container">
+        <h4>Concrete Clickbait and Yugoslavia's modernist war memorials</h4>
+        <section class="main-carousel">
+            <div class="carousel-cell"><img src="images/1.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/2.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/3.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/4.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/5.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/6.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/7.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/8.png" alt=""></div>
+            <div class="carousel-cell"><img src="images/9.jpg" alt=""></div>
+        </section>
+    </section>
+
+</body>
+
+</html>
