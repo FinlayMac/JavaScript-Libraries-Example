@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/validationExample.css">
 
 
-    <script src="scripts/bouncer.min.js"></script>
+    <script defer src="scripts/bouncer.min.js"></script>
 </head>
 
 <body>
@@ -67,29 +67,34 @@
 </body>
 
 <script>
-    var validate = new Bouncer('form', {
 
-        customValidations: {
-            valueMismatch: function (field) {
+    document.addEventListener("DOMContentLoaded", function () {
 
-                //check the current input field to see if it has the attribute:
-                var selector = field.getAttribute('data-bouncer-match');
-                if (!selector) return false
+        var validate = new Bouncer('form', {
 
-                //find the 2nd input that it should match
-                var otherField = field.form.querySelector(selector);
-                if (!otherField) return false;
+            customValidations: {
+                valueMismatch: function (field) {
 
-                // Compare the two field values
-                // We use a negative comparison here because if they do match, the field validates
-                // We want to return true for failures, which can be confusing
-                return otherField.value !== field.value;
+                    //check the current input field to see if it has the attribute:
+                    var selector = field.getAttribute('data-bouncer-match');
+                    if (!selector) return false
+
+                    //find the 2nd input that it should match
+                    var otherField = field.form.querySelector(selector);
+                    if (!otherField) return false;
+
+                    // Compare the two field values
+                    // We use a negative comparison here because if they do match, the field validates
+                    // We want to return true for failures, which can be confusing
+                    return otherField.value !== field.value;
+                }
+            },
+            messages: {
+                valueMismatch: 'Please make sure your passwords match.',
             }
-        },
-        messages: {
-            valueMismatch: 'Please make sure your passwords match.',
-        }
-    });
+        });
+
+    })
 </script>
 
 
