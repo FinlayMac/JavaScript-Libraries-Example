@@ -95,3 +95,17 @@ button {
     }
 }
 
+
+
+/*For bouncer JS*/
+
+.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 80%;
+}
