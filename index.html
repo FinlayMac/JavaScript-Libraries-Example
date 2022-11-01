@@ -7,8 +7,10 @@
     <title>JavaScript Test</title>
 
     <link rel="stylesheet" href="css/validationExample.css">
+    <link rel="stylesheet" href="css/flickity.min.css">
 
 
+    <script defer src="scripts/flickity.pkgd.min.js"></script>
     <script defer src="scripts/bouncer.min.js"></script>
 </head>
 
@@ -60,7 +62,7 @@
             <div class="carousel-cell"><img src="images/6.png" alt=""></div>
             <div class="carousel-cell"><img src="images/7.png" alt=""></div>
             <div class="carousel-cell"><img src="images/8.png" alt=""></div>
-            <div class="carousel-cell"><img src="images/9.jpg" alt=""></div>
+            <!-- <div class="carousel-cell"><img src="images/9.jpg" alt=""></div> -->
         </section>
     </section>
 
@@ -69,6 +71,17 @@
 <script>
 
     document.addEventListener("DOMContentLoaded", function () {
+
+        //flickity setup
+        var elem = document.querySelector('.main-carousel');
+        var flkty = new Flickity(elem, {
+            // options
+            cellAlign: 'center',
+
+            freeScroll: true,
+            wrapAround: true,
+            autoPlay: 2500
+        });
 
         var validate = new Bouncer('form', {
 
