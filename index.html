@@ -8,10 +8,12 @@
 
     <link rel="stylesheet" href="css/validationExample.css">
     <link rel="stylesheet" href="css/flickity.min.css">
+    <link rel="stylesheet" href="css/aos.css">
 
 
     <script defer src="scripts/flickity.pkgd.min.js"></script>
     <script defer src="scripts/bouncer.min.js"></script>
+    <script src="scripts/aos.js"></script>
 </head>
 
 <body>
@@ -49,9 +51,9 @@
         </form>
     </section>
 
-    <div class="break"></div>
+    <div class="break" data-aos="slide-left"></div>
 
-    <section class="container">
+    <section class="container" data-aos="fade-up">
         <h4>Concrete Clickbait and Yugoslavia's modernist war memorials</h4>
         <section class="main-carousel">
             <div class="carousel-cell"><img src="images/1.png" alt=""></div>
@@ -66,18 +68,22 @@
         </section>
     </section>
 
+    <div class="break" data-aos="slide-right"></div>
+
 </body>
 
 <script>
 
     document.addEventListener("DOMContentLoaded", function () {
 
+        AOS.init();
+
         //flickity setup
         var elem = document.querySelector('.main-carousel');
         var flkty = new Flickity(elem, {
             // options
             cellAlign: 'center',
-
+            imagesLoaded: true,
             freeScroll: true,
             wrapAround: true,
             autoPlay: 2500
